@@ -73,10 +73,10 @@
       return;
     }
 
-    // if (commentTextElement.value === '') {
-    //   commentTextElement.lassList.add('error');
-    //   return;
-    // }
+    if (commentTextElement.value === '') {
+      commentTextElement.classList.add('error');
+      return;
+    }
 
     const oldCommentsHtml = commentsElement.innerHTML;
     commentsElement.innerHTML = oldCommentsHtml + `<li class="comment">
