@@ -46,7 +46,7 @@
       </li>
     </ul>
     <div class="add-form">
-      <input type="text" class="add-form-name" id="name-input" placeholder="Введите ваше имя"; />
+      <input type="text" class="add-form-name" id="name-input" placeholder="Введите ваше имя" ; />
       <textarea type="textarea" class="add-form-text" id="comment-text" placeholder="Введите ваш коментарий"
         rows="4"></textarea>
       <div class="add-form-row">
@@ -62,12 +62,15 @@
   const commentsElement = document.getElementById('comments');
   const nameInputElement = document.getElementById('name-input');
   const commentTextElement = document.getElementById('comment-text');
-  let now = new Date();
+
+  let currTime = new Date();
+  let now = currTime.getDate() + '.' + (currTime.getMonth() + 1) + '.' + currTime.getFullYear() +
+    ' ' + currTime.getHours() + ':' + currTime.getMinutes();
 
   buttonElement.addEventListener('click', () => {
 
     nameInputElement.classList.remove('error');
-    
+
     if (nameInputElement.value === '') {
       nameInputElement.classList.add('error');
       return;
